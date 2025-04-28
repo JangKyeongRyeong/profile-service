@@ -1,10 +1,13 @@
 # 1단계: Build Stage
 FROM gradle:8.5.0-jdk17-alpine AS build
+
+# 작업 디렉토리 설정
 WORKDIR /app
 
-# 필요한 파일만 복사 (의존성 캐시 활용)
+# 의존성 파일 복사
 COPY build.gradle settings.gradle gradlew /app/
 COPY gradle /app/gradle
+# 의존성 설치
 RUN ./gradlew dependencies
 
 # 전체 복사 후 빌드

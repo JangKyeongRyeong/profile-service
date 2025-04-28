@@ -17,12 +17,14 @@ public class MemberController {
 
     private final MemberProfileService memberProfileService;
 
+    // 회원 프로필 생성
     @PostMapping("/members")
     public ResponseEntity<MemberProfileResponse> createMember(@RequestBody @Valid MemberCreateRequest request) {
         MemberProfileResponse response = memberProfileService.createMember(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
+    // 회원 프로필 리스트 조회
     @GetMapping("/members")
     public Page<MemberProfileResponse> getMembers(
             @RequestParam(required = false) String keyword,
@@ -33,8 +35,16 @@ public class MemberController {
       return memberProfileService.getMemberList(keyword, sort, page, size);
     }
 
-    @PutMapping("/members/{id}/view")
-    public ResponseEntity<Void> increamentViewCount (@PathVariable Long id) {
+    // 회원 상세 조회
+    @GetMapping("/members/{id}")
+    public ResponseEntity<MemberProfileResponse> getMemberDetail(@PathVariable Long id) throws IllegalAccessException {
+        MemberProfileResponse memberProfile = memberProfileService.getMemberProfile(id);
+        return ResponseEntity.ok(memberProfile);
+    }
+
+    // 회원 프로필의 조회수 증가
+    @PutMapping("/members/{id}/view-count")
+    public ResponseEntity<Void> increaseViewCount (@PathVariable Long id) {
         memberProfileService.increaseViewCount(id);
         return ResponseEntity.ok().build();
     }
