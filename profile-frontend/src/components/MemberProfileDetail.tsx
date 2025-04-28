@@ -31,6 +31,7 @@ const MemberProfileDetail: React.FC = () => {
   return (
     <div>
       <button onClick={() => navigate(-1)}>뒤로가기</button>
+      <h1>회원 프로필 상세 보기 🧑‍💻</h1>
       <h2>{profile.name}</h2>
       <p>조회수: {profile.viewCount}</p>
       <p>등록일: {profile.createdAt}</p>
