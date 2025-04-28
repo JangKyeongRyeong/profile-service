@@ -1,6 +1,7 @@
 spring:
   datasource:
-    url: "jdbc:mysql://localhost/memberProfile"
+    # host.docker.internal 은 Docker 컨테이너 → 호스트PC 로 접근할 때 사용하는 주소
+    url: "jdbc:mysql://host.docker.internal:3306/memberProfile"
     username: "root"
     password: "1234"
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -11,13 +11,18 @@ RUN ./gradlew dependencies
 COPY . /app
 RUN ./gradlew build -x test --stacktrace
 
-# JAVA_HOME 환경 변수 설정
+#JAVA_HOME 환경 변수 설정
 ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 # 2단계: Run Stage
 FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
 VOLUME /tmp
-ARG JAR_FILE=build/libs/*.jar
-COPY --from=build ${JAR_FILE} app.jar
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+
+# 포트 오픈 (8080)
+EXPOSE 8080
+
+COPY --from=build /app/build/libs/app.jar app.jar
+
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]

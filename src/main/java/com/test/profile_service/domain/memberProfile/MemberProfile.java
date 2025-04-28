@@ -25,10 +25,11 @@ public class MemberProfile {
 
     public MemberProfile(String name) {
         this.name = name;
+        this.viewCount = 0;
     }
 
     public void increaseViewCount() {
-        this.viewCount += 1;
+        this.viewCount ++;
     }
 
     @PrePersist

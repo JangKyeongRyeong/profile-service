@@ -10,7 +10,7 @@ import java.util.List;
 public interface MemberProfileService {
 
     // 회원 생성
-    public default void saveMember(MemberCreateRequest request) {}
+    MemberProfileResponse createMember(MemberCreateRequest request);
 
     // 회원 프로필 리스트 조회
     Page<MemberProfileResponse> getMemberList(String keyword, String sort, int page, int size);

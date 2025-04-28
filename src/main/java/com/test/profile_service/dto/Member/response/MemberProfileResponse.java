@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Getter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class MemberProfileResponse {
@@ -23,5 +22,13 @@ public class MemberProfileResponse {
         this.id = memberProfile.getId();
         this.name = memberProfile.getName();
         this.viewCount = memberProfile.getViewCount();
+    }
+
+    @Builder
+    public MemberProfileResponse(Long id, String name, int viewCount, LocalDateTime registeredAt) {
+        this.id = id;
+        this.name = name;
+        this.viewCount = viewCount;
+        this.registeredAt = registeredAt;
     }
 }

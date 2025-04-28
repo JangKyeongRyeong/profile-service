@@ -13,6 +13,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+
 @Service
 @RequiredArgsConstructor
 public class MemberProfileServiceImpl implements MemberProfileService {
@@ -27,9 +29,15 @@ public class MemberProfileServiceImpl implements MemberProfileService {
 
     @Override
     @Transactional
-    public void saveMember(MemberCreateRequest request) {
-        MemberProfile profile = new MemberProfile(request.getName());
-        memberProfileRepository.save(profile);
+    public MemberProfileResponse createMember(MemberCreateRequest request) {
+        MemberProfile profile = MemberProfile.builder()
+                .name(request.getName())
+                .viewCount(0)
+                .registeredAt(LocalDateTime.now())
+                .build();
+
+        MemberProfile saved = memberProfileRepository.save(profile);
+        return MemberProfileMapper.toResponse(saved);
     }
 
 
@@ -46,14 +54,18 @@ public class MemberProfileServiceImpl implements MemberProfileService {
     @Override
     @Transactional(readOnly = true)
     public MemberProfileResponse getMemberProfile(Long id) throws IllegalAccessException {
-        MemberProfile profile = memberProfileRepository.findById(id).orElseThrow(IllegalAccessException::new);
+        MemberProfile profile = memberProfileRepository.findById(id)
+                .orElseThrow(IllegalAccessException::new);
+
         return new MemberProfileResponse(profile);
     }
 
     @Override
     @Transactional
     public void increaseViewCount(Long id) {
-        MemberProfile profile = memberProfileRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+        MemberProfile profile = memberProfileRepository.findById(id)
+                .orElseThrow(IllegalArgumentException::new);
+
         profile.increaseViewCount();
     }
 }
