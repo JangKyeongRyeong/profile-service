@@ -1,11 +1,8 @@
 package com.test.profile_service.service.memberProfile;
 
-import com.test.profile_service.dto.Member.MemberProfileDto;
-import com.test.profile_service.dto.Member.request.MemberCreateRequest;
-import com.test.profile_service.dto.Member.response.MemberProfileResponse;
+import com.test.profile_service.dto.member.request.MemberCreateRequest;
+import com.test.profile_service.dto.member.response.MemberProfileResponse;
 import org.springframework.data.domain.Page;
-
-import java.util.List;
 
 public interface MemberProfileService {
 

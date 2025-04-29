@@ -13,3 +13,7 @@ spring:
         show_sql: true
         format_sql: true
         dialect: org.hibernate.dialect.MySQL8Dialect
+
+tosspayments:
+  # @Value 어노테이션을 사용하여 속성 파일에 정의된 값
+  secretKey: test_sk_your_secret_key_here

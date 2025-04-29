@@ -1,4 +1,4 @@
-package com.test.profile_service.dto.Member.response;
+package com.test.profile_service.dto.member.response;
 
 import com.test.profile_service.domain.memberProfile.MemberProfile;
 import lombok.AllArgsConstructor;

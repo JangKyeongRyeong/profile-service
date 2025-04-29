@@ -2,9 +2,8 @@ package com.test.profile_service.service.memberProfile;
 
 import com.test.profile_service.database.mapper.MemberProfileMapper;
 import com.test.profile_service.domain.memberProfile.MemberProfile;
-import com.test.profile_service.dto.Member.MemberProfileDto;
-import com.test.profile_service.dto.Member.request.MemberCreateRequest;
-import com.test.profile_service.dto.Member.response.MemberProfileResponse;
+import com.test.profile_service.dto.member.request.MemberCreateRequest;
+import com.test.profile_service.dto.member.response.MemberProfileResponse;
 import com.test.profile_service.repository.member.MemberProfileRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

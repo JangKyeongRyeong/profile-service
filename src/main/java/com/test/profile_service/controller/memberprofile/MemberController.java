@@ -1,7 +1,7 @@
 package com.test.profile_service.controller.memberprofile;
 
-import com.test.profile_service.dto.Member.request.MemberCreateRequest;
-import com.test.profile_service.dto.Member.response.MemberProfileResponse;
+import com.test.profile_service.dto.member.request.MemberCreateRequest;
+import com.test.profile_service.dto.member.response.MemberProfileResponse;
 import com.test.profile_service.service.memberProfile.MemberProfileService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

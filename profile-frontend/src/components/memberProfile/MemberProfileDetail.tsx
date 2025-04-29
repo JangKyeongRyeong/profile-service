@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { fetchProfileDetail, increaseViewCount } from '../api/memberProfileApi';
+import { fetchProfileDetail, increaseViewCount } from '../../api/memberProfile/MemberProfileApi';
 
 interface MemberProfile {
   id: number;

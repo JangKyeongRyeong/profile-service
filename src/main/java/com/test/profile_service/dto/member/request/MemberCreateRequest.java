@@ -1,4 +1,4 @@
-package com.test.profile_service.dto.Member.request;
+package com.test.profile_service.dto.member.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

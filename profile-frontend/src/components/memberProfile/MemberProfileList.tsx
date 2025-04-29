@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchProfiles } from '../api/memberProfileApi';
+import { fetchProfiles } from '../../api/memberProfile/MemberProfileApi';
 import { useNavigate } from 'react-router-dom';
 
 interface MemberProfile {

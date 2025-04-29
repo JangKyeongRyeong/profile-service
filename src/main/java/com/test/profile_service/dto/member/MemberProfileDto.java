@@ -1,4 +1,4 @@
-package com.test.profile_service.dto.Member;
+package com.test.profile_service.dto.member;
 
 import lombok.*;
 
