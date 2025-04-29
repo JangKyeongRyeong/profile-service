@@ -23,12 +23,13 @@ Toss Payments 기반 포인트 충전
 Docker Compose를 통한 전체 시스템 실행
 
 # 4.🚀 실행 방법 (로컬)
-bash에서
-git clone https://github.com/JangKyeongRyeong/profile-service.git
-cd member-profile-payment
-
 docker에 빌드
-docker-compose up --build
+docker build -t profile-service .
+docker run -d -p 8080:8080 --name profile-service profile-service
+
+경로: profile-service\profile-fronted 에서
+npm start
+
 
 # 5.🔐 사용된 외부 라이브러리
 Toss Payments SDK (결제 위젯 렌더링)
