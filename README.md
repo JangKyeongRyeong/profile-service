@@ -23,14 +23,11 @@ Toss Payments 기반 포인트 충전
 Docker Compose를 통한 전체 시스템 실행
 
 🚀 실행 방법 (로컬)
-# 1. 클론
+bash에서
 git clone https://github.com/JangKyeongRyeong/profile-service.git
 cd member-profile-payment
 
-# 2. 환경 변수 설정 (.env 또는 application.yml)
-# tosspayments.secretKey 등 설정 필요
-
-# 3. Docker로 실행
+docker에 빌드
 docker-compose up --build
 
 🔐 사용된 외부 라이브러리
@@ -39,6 +36,9 @@ Toss Payments SDK (결제 위젯 렌더링)
 Axios, React Router, Tailwind (프론트 UI)
 
 Spring Boot Starter, QueryDSL, Lombok (백엔드)
+
+👉프로젝트 하면서 블로그에 정리
+https://programmerjkr.tistory.com/category/Project/profile-service
 
 📄 참고 문서
 Toss Payments 공식 문서 (https://docs.tosspayments.com/guides/v2/payment-widget/integration)
