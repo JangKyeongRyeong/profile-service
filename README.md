@@ -23,11 +23,8 @@ Toss Payments 기반 포인트 충전
 Docker Compose를 통한 전체 시스템 실행
 
 🚀 실행 방법 (로컬)
-bash
-복사
-편집
 # 1. 클론
-git clone https://github.com/your-repo/member-profile-payment.git
+git clone https://github.com/JangKyeongRyeong/profile-service.git
 cd member-profile-payment
 
 # 2. 환경 변수 설정 (.env 또는 application.yml)
