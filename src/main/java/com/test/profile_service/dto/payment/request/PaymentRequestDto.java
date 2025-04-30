@@ -15,15 +15,18 @@ public class PaymentRequestDto {
 
     private String paymentKey;  // toss에서 받은 결제키
     private String orderId;     // 주문 번호
-    private int amount;         // 결제 금액
+    private int amount;         // 원래 결제 금액
     private Long memberId;      // 결제하는 회원 ID
+    private String couponCode;  // 쿠폰 코드
+
 
     @Builder
-    public PaymentRequestDto(String paymentKey, String orderId, int amount, Long memberId) {
+    public PaymentRequestDto(String paymentKey, String orderId, int amount, Long memberId, String couponCode) {
         this.paymentKey = paymentKey;
         this.orderId = orderId;
         this.amount = amount;
         this.memberId = memberId;
+        this.couponCode = couponCode;
     }
 
 }
