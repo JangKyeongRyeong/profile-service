@@ -1,5 +1,9 @@
 package com.test.profile_service.dto.payment.request;
 
+import com.test.profile_service.annotation.EnumValue;
+import com.test.profile_service.domain.CouponCode;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,6 +21,9 @@ public class PaymentRequestDto {
     private String orderId;     // 주문 번호
     private int amount;         // 원래 결제 금액
     private Long memberId;      // 결제하는 회원 ID
+
+    @Enumerated(EnumType.STRING)
+    @EnumValue(enumClass = CouponCode.class, message = "유효하지 않은 쿠폰 코드입니다.", ignoreCase = true)
     private String couponCode;  // 쿠폰 코드
 
 

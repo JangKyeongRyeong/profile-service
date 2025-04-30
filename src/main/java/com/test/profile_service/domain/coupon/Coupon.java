@@ -1,5 +1,6 @@
 package com.test.profile_service.domain.coupon;
 
+import com.test.profile_service.annotation.EnumValue;
 import com.test.profile_service.domain.CouponCode;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -20,6 +21,7 @@ public class Coupon {
 
     @Enumerated(EnumType.STRING)
     @Column(unique = true, nullable = false)
+    @EnumValue(enumClass = CouponCode.class, message = "유효하지 않은 쿠폰 코드입니다.", ignoreCase = true)
     private CouponCode code;            // 쿠폰 코드
 
     @Column(nullable = false)
